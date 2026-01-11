@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторные работы №2-5</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            color: #1a2a6c;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subtitle {
+            color: #555;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .labs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .lab-card {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .lab-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+        
+        .lab-number {
+            display: inline-block;
+            background: linear-gradient(to right, #1a2a6c, #b21f1f);
+            color: white;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 50px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .lab-title {
+            font-size: 1.5rem;
+            color: #1a2a6c;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        
+        .lab-description {
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            flex-grow: 2;
+        }
+        
+        .lab-link {
+            display: inline-block;
+            background: linear-gradient(to right, #fdbb2d, #b21f1f);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: auto;
+        }
+        
+        .lab-link:hover {
+            background: linear-gradient(to right, #b21f1f, #fdbb2d);
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .lab-link i {
+            margin-left: 8px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            color: #555;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .instructions {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .instructions h2 {
+            color: #1a2a6c;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .instructions p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .instructions ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .labs-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Лабораторные работы №2-5</h1>
+            <p class="subtitle">Навигационная страница для доступа к лабораторным работам по веб-разработке</p>
+        </header>
+        
+        <section class="instructions">
+            <h2>Как использовать эту страницу</h2>
+            <p>Эта страница содержит ссылки на четыре лабораторные работы. Каждая карточка представляет одну лабораторную работу с кратким описанием и кнопкой для перехода на сайт работы.</p>
+            <p>Для перехода к лабораторной работе:</p>
+            <ul>
+                <li>Найдите карточку с нужным номером лабораторной работы</li>
+                <li>Нажмите на кнопку "Перейти к работе"</li>
+                <li>Вы будете перенаправлены на соответствующий сайт в новой вкладке браузера</li>
+            </ul>
+        </section>
+        
+        <div class="labs-container">
+            <div class="lab-card">
+                <div class="lab-number">Лабораторная работа №2</div>
+                <h3 class="lab-title">Основы HTML и CSS</h3>
+                <p class="lab-description">Эта работа демонстрирует базовые навыки работы с HTML и CSS, включая создание структуры веб-страницы, стилизацию элементов и адаптивную верстку.</p>
+                <a href="https://lab22-virid.vercel.app/" target="_blank" class="lab-link">Перейти к работе <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            
+            <div class="lab-card">
+                <div class="lab-number">Лабораторная работа №3</div>
+                <h3 class="lab-title">JavaScript и интерактивность</h3>
+                <p class="lab-description">В этой работе представлены основы JavaScript, включая работу с DOM, обработку событий и создание интерактивных элементов на странице.</p>
+                <a href="https://lab3-gamma-five.vercel.app/" target="_blank" class="lab-link">Перейти к работе <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            
+            <div class="lab-card">
+                <div class="lab-number">Лабораторная работа №4</div>
+                <h3 class="lab-title">Продвинутый JavaScript и API</h3>
+                <p class="lab-description">Работа посвящена более сложным аспектам JavaScript, включая работу с асинхронными запросами, API и современными возможностями языка.</p>
+                <a href="https://lab4-six-roan.vercel.app/" target="_blank" class="lab-link">Перейти к работе <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            
+            <div class="lab-card">
+                <div class="lab-number">Лабораторная работа №5</div>
+                <h3 class="lab-title">Фреймворки и библиотеки</h3>
+                <p class="lab-description">Заключительная работа, демонстрирующая использование современных фреймворков и библиотек для создания сложных веб-приложений.</p>
+                <a href="https://lab5-teal.vercel.app/" target="_blank" class="lab-link">Перейти к работе <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Навигационная страница для лабораторных работ по веб-разработке</p>
+            <p>Все ссылки открываются в новой вкладке браузера</p>
+        </footer>
+    </div>
+
+    <script>
+        // Добавим простой интерактивный функционал
+        document.addEventListener('DOMContentLoaded', function() {
+            // Анимация при наведении на карточки
+            const labCards = document.querySelectorAll('.lab-card');
+            
+            labCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Добавим подтверждение перехода по ссылке
+            const labLinks = document.querySelectorAll('.lab-link');
+            
+            labLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const labNumber = this.closest('.lab-card').querySelector('.lab-number').textContent;
+                    console.log(`Переход к ${labNumber}`);
+                    
+                    // Можно добавить дополнительную логику здесь, если нужно
+                    // Например, отправку статистики или подтверждение перехода
+                });
+            });
+            
+            // Простая анимация появления карточек при загрузке
+            setTimeout(() => {
+                labCards.forEach((card, index) => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    
+                    setTimeout(() => {
+                        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            }, 300);
+        });
+    </script>
+</body>
+</html>
